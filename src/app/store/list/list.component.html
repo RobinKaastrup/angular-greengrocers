@@ -1,7 +1,19 @@
+<select (change)="filterItems($event)">
+  <option value="any">any</option>
+  <option value="vegetable">vegetable</option> 
+  <option value="fruit">fruit</option> 
+</select>
+
+<select (change)="sortItems($event)">
+  <option value="unordered">unordered</option>
+  <option value="price">price</option> 
+  <option value="name">name</option> 
+</select>
+
 <ul class="store--item-list">
   <li *ngFor="let item of items">
     <div class="store--item-icon">
-      <img  [src]="'../assets/icons/' + item.id + '.svg'">
+      <img [src]="'../assets/icons/' + item.id + '.svg'">
     </div>
     <button (click)="addToCart(item)">add to cart</button>
   </li>
